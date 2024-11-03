@@ -6,8 +6,6 @@ image: "https://example.com/my-first-post-image.jpg"
 
 # Welcome to My Blog!
 
-This is my very first blog post! 🎉 I'm excited to share my thoughts and ideas with you.
-
 ## What Will You Find Here?
 
 In this blog, you can expect to find:
@@ -31,3 +29,4 @@ Here's a simple example of a JavaScript function that adds two numbers:
 function add(a, b) {
   return a + b;
 }
+```
