@@ -23,10 +23,4 @@ I am a software developer with a passion for writing and sharing knowledge. I lo
 
 ## Code Example
 
-Here's a simple example of a JavaScript function that adds two numbers:
-
-```javascript
-function add(a, b) {
-  return a + b;
-}
-```
+Here's a simple example of a JavaScript function that adds two numbers
