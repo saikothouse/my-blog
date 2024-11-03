@@ -84,16 +84,14 @@ const PostDetail = () => {
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeRaw, rehypeHighlight]}
           components={{
-            // Customizing blockquotes
             blockquote: ({ node, ...props }) => (
               <blockquote className="border-l-4 border-gray-500 pl-4 italic text-gray-600 my-4" {...props} />
             ),
-            // Customizing code blocks
             code({ node, inline, className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || '');
               return !inline && match ? (
                 <SyntaxHighlighter
-                  style={solarizedlight }
+                  style={solarizedlight}
                   language={match[1]}
                   PreTag="div"
                   {...props}
@@ -106,7 +104,6 @@ const PostDetail = () => {
                 </code>
               );
             },
-            // Embed YouTube videos
             iframe: ({ node, ...props }) => {
               const src = props.src || '';
               if (src.includes('youtube.com') || src.includes('youtu.be')) {
@@ -121,13 +118,7 @@ const PostDetail = () => {
                     />
                   </div>
                 );
-              }
-              return <iframe {...props} />;
-            },
-            // Embed Facebook videos
-            iframe: ({ node, ...props }) => {
-              const src = props.src || '';
-              if (src.includes('facebook.com')) {
+              } else if (src.includes('facebook.com')) {
                 const videoId = src.split('?video_id=')[1];
                 return (
                   <div className="aspect-w-16 aspect-h-9">
@@ -142,7 +133,6 @@ const PostDetail = () => {
               }
               return <iframe {...props} />;
             },
-            // Embed GitHub Gists
             a: ({ node, ...props }) => {
               const href = props.href || '';
               if (href.includes('gist.github.com')) {
@@ -159,7 +149,6 @@ const PostDetail = () => {
               }
               return <a {...props} />;
             },
-            // Add audio player for HTML audio tags
             audio: ({ node, ...props }) => {
               return (
                 <audio controls {...props}>
@@ -168,7 +157,6 @@ const PostDetail = () => {
                 </audio>
               );
             },
-            // Add video player for HTML video tags
             video: ({ node, ...props }) => {
               return (
                 <video controls {...props}>
