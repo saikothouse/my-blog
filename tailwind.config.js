@@ -1,35 +1,13 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 module.exports = {
   content: [
-    './src/**/*.{md,js,jsx,ts,tsx}', // Include all relevant file types
-    './index.html',
+    "./index.html",
+    "./src/**/*.{js,jsx,ts,tsx}", // Adjust this line based on your project's structure
   ],
   theme: {
-    extend: {
-      typography: {
-        DEFAULT: {
-          css: {
-            color: '#333',
-            a: {
-              color: '#3182ce',
-              '&:hover': {
-                color: '#2c5282',
-              },
-            },
-            h1: {
-              color: '#2c3e50', // Example for header color
-            },
-            h2: {
-              color: '#34495e', // Example for subheader color
-            },
-            // Add more styles for other elements as needed
-          },
-        },
-      },
-    },
+    extend: {},
   },
   plugins: [
     require('@tailwindcss/typography'),
-    // Add other plugins here if needed
   ],
-}
+};
